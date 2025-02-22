@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Card, Button, Container, Row, Col, Spinner, Alert, Form } from 'react-bootstrap';
+import { Card, Button, Container, Row, Col, Spinner, Alert, Form, Badge } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';  // เพิ่มการนำเข้า useNavigate
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -8,6 +9,8 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState(''); // สำหรับเก็บค่าการค้นหา
+  const [cart, setCart] = useState([]); // ตะกร้าสินค้า
+  const navigate = useNavigate();  // ใช้ useNavigate สำหรับการเปลี่ยนเส้นทาง
 
   useEffect(() => {
     axios.get('http://localhost:3000/api/products')
@@ -35,8 +38,13 @@ function Home() {
 
   return (
     <Container className="mt-4">
-      <h2 className="text-center mb-4">All Products</h2>
-
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h2 className="text-center">All Products</h2>
+        <Button variant="success">
+          Cart <Badge bg="light" text="dark">{cart.length}</Badge>
+        </Button>
+      </div>
+      
       {/* ฟอร์มการค้นหา */}
       <Form.Control
         type="text"
@@ -67,7 +75,7 @@ function Home() {
                     <strong>Date:</strong> {product.date} <br />
                     <strong>Stock:</strong> {product.piece} pcs
                   </Card.Text>
-                  <Button variant="primary">View Details</Button>
+                  {/* ลบปุ่ม "Add to Cart" และ "Buy" */}
                 </Card.Body>
               </Card>
             </Col>

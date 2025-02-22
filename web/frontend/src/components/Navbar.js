@@ -17,7 +17,7 @@ function AppNavbar() {
         <Navbar.Brand as={Link} to="/">Inventory</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link as={Link} to="/">Home</Nav.Link>
-          {isLoggedIn ? (
+          {isLoggedIn && (
             <>
               <Nav.Link as={Link} to="/products">Products</Nav.Link>
               <Nav.Link as={Link} to="/add-product">Add Product</Nav.Link>
@@ -25,8 +25,6 @@ function AppNavbar() {
                 Logout
               </Button>
             </>
-          ) : (
-            <Nav.Link as={Link} to="/login_admin">Login</Nav.Link>
           )}
         </Nav>
       </Container>
