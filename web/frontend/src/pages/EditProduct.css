@@ -1,0 +1,104 @@
+/* EditProduct.css */
+
+/* รูปแบบของหน้า */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* หัวข้อของหน้าจะแสดงในสีฟ้าและมีขนาดใหญ่ */
+  h2 {
+    text-align: center;
+    color: #007bff;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
+  
+  /* คำเตือน (error) และข้อความสำเร็จ (success) */
+  .alert {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  /* ส่วนที่เป็นการ์ด (Card) */
+  .card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  /* ข้อความในการ์ด */
+  .card-title {
+    text-align: center;
+    color: #007bff;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  /* ฟอร์ม */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* ปุ่ม Submit */
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+  }
+  
+  /* ตารางข้อมูลสินค้า */
+  .table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .table td {
+    text-align: center;
+    font-size: 14px;
+    padding: 8px;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }
+  

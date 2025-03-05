@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Form, Button, Alert, Card, Row, Col, Table } from 'react-bootstrap';
+import './EditProduct.css'
 
 function EditProduct() {
   const { codeproduct } = useParams(); // รับค่า codeproduct จาก URL
