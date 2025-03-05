@@ -1,0 +1,44 @@
+/* AppNavbar.css */
+
+.navbar-custom {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand-custom {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff !important;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-brand-custom:hover {
+    color: #f39c12 !important;
+  }
+  
+  .nav-link-custom {
+    font-size: 18px;
+    color: #ecf0f1 !important;
+    transition: color 0.3s ease;
+    margin: 0 10px;
+  }
+  
+  .nav-link-custom:hover {
+    color: #f39c12 !important;
+  }
+  
+  .btn-logout {
+    background: #e74c3c;
+    border: none;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+    margin-left: 15px;
+  }
+  
+  .btn-logout:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+  }

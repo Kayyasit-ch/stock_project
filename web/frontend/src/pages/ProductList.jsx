@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Table, Spinner, Alert, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';  // เพิ่ม Link
+import './ProductList.css'
 
 function ProductList() {
   const [products, setProducts] = useState([]);

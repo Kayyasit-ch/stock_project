@@ -1,5 +1,6 @@
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
+import './AppNavbar.css';
 
 function AppNavbar() {
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
@@ -12,21 +13,24 @@ function AppNavbar() {
   };
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar expand="lg" className="navbar-custom">
       <Container>
-        <Navbar.Brand as={Link} to="/">Inventory</Navbar.Brand>
-        <Nav className="me-auto">
-          <Nav.Link as={Link} to="/">Home</Nav.Link>
-          {isLoggedIn && (
-            <>
-              <Nav.Link as={Link} to="/products">Products</Nav.Link>
-              <Nav.Link as={Link} to="/add-product">Add Product</Nav.Link>
-              <Button variant="outline-light" size="sm" className="ms-2" onClick={handleLogout}>
-                Logout
-              </Button>
-            </>
-          )}
-        </Nav>
+        <Navbar.Brand as={Link} to="/" className="navbar-brand-custom">Inventory</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link as={Link} to="/" className="nav-link-custom">Home</Nav.Link>
+            {isLoggedIn && (
+              <>
+                <Nav.Link as={Link} to="/products" className="nav-link-custom">Products</Nav.Link>
+                <Nav.Link as={Link} to="/add-product" className="nav-link-custom">Add Product</Nav.Link>
+                <Button variant="outline-light" size="sm" className="btn-logout" onClick={handleLogout}>
+                  Logout
+                </Button>
+              </>
+            )}
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
